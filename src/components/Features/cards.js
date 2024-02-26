@@ -2,17 +2,11 @@ import Image from "next/image";
 import { BiStats } from "react-icons/bi";
 import { GiMatterStates } from "react-icons/gi";
 import { TbGraph } from "react-icons/tb";
+import { animated } from "react-spring";
 
-import {
-  animate,
-  motion,
-  useAnimation,
-  useInView,
-  useMotionValue,
-  useTransform,
-} from "framer-motion";
+import { motion, useAnimation, useInView } from "framer-motion";
 import { useEffect, useRef } from "react";
-import { useIncrement } from "@/hooks/useIncrement";
+import { useCountingNumber } from "../animated/countingNumber";
 
 export const ConversionCard = () => {
   const ref = useRef(null);
@@ -60,10 +54,6 @@ export const ConversionCard = () => {
     >
       <p className="text-[10px] font-semibold pb-4 ">Conversion rate</p>
       <motion.div
-        // variants={containerVariants}
-        // initial={{ width: "100%" }}
-        // animate={containerVariants}
-        // animate="animate"
         transition={{ duration: 6 }}
         className=" text-center w-full h-[60px] flex items-center relative  justify-center rounded-lg bg-[#fff] "
       >
@@ -102,17 +92,15 @@ export const ConversionCard = () => {
 
 export const SalesCard = () => {
   const ref = useRef(null);
-  const { rounded } = useIncrement();
   const isInView = useInView(ref, { amount: 0.5 });
   const mainControl = useAnimation();
+  const { number } = useCountingNumber(isInView ? 161 : 160, isInView);
 
   useEffect(() => {
     if (isInView) {
       mainControl.start("visible");
     }
   }, [isInView]);
-
-  console.log(rounded, "some");
 
   const data = [
     { name: "Min price", img: "/image/img1.png", price: "1,200 $" },
@@ -142,7 +130,7 @@ export const SalesCard = () => {
       <p className="text-xs text-[#aaa9a9]  font-semibold ">Sales revenue</p>
       <motion.h2 className="text-2xl font-medium">
         <span className="text-sm">$</span>
-        {rounded.current} K
+        <animated.span>{number.to((n) => n.toFixed(0))}</animated.span> K
       </motion.h2>
       <div className=" items-center flex justify-center my-3 gap-1">
         <div className="h-1 w-full flex-1 bg-[#fff] rounded-lg">
@@ -226,6 +214,8 @@ export const SecondIndicatorCard = () => {
 };
 
 export const IndicatorCard = () => {
+  const ref = useRef(null);
+  const isInView = useInView(ref, { once: true });
   return (
     <div className="border pb-2 rounded-t-2xl shadow-sm relative w-[300px] bg-white min-h-[30px]">
       <div className="flex p-2 items-center justify-start gap-1">
@@ -245,27 +235,92 @@ export const IndicatorCard = () => {
           </button>
         </div>
         <div className="px-3 relative flex items-end justify-start gap-2 pt-1">
-          <div className="flex items-center justify-center gap-1 flex-col">
-            <div className="w-5 h-12 bg-[#e2e0e0] rounded"></div>
+          <div ref={ref} className="flex items-center justify-center gap-1 flex-col">
+            <motion.div
+              variants={{
+                initial: {
+                  height: 0,
+                },
+                visible: {
+                  height: 48,
+                },
+              }}
+              initial="initial"
+              animate={isInView ? "visible" : "initial"}
+              transition={{ duration: 2 }}
+              className="w-5  bg-[#e2e0e0] rounded"
+            ></motion.div>
             <p className="text-[8px] text-[#e2e0e0]">2021</p>
           </div>
           <div className="flex items-center justify-center gap-1 flex-col">
-            <div className="w-5 h-4 bg-[#e2e0e0] rounded"></div>
+            <motion.div
+              variants={{
+                initial: {
+                  height: 0,
+                },
+                visible: {
+                  height: 20,
+                },
+              }}
+              initial="initial"
+              animate={isInView ? "visible" : "initial"}
+              transition={{ duration: 2 }}
+              className="w-5  bg-[#e2e0e0] rounded"
+            ></motion.div>
             <p className="text-[8px] text-[#e2e0e0]">2020</p>
           </div>
           <div className="flex items-center justify-center gap-1 flex-col">
-            <div className="w-5 h-12 bg-[#e2e0e0] rounded"></div>
+            <motion.div
+              variants={{
+                initial: {
+                  height: 0,
+                },
+                visible: {
+                  height: 48,
+                },
+              }}
+              initial="initial"
+              animate={isInView ? "visible" : "initial"}
+              transition={{ duration: 2 }}
+              className="w-5  bg-[#e2e0e0] rounded"
+            ></motion.div>
             <p className="text-[8px] text-[#e2e0e0]">2019</p>
           </div>
           <div className="flex items-center relative justify-center gap-1 flex-col">
             <div className=" h-9 border-r-2 left-2 absolute -top-9 border-dotted border-[#f6cf42]">
               {}
             </div>
-            <div className="w-5 h-16 bg-[#F6CF42] relative rounded"></div>
+            <motion.div
+              variants={{
+                initial: {
+                  height: 0,
+                },
+                visible: {
+                  height: 64,
+                },
+              }}
+              initial="initial"
+              animate={isInView ? "visible" : "initial"}
+              transition={{ duration: 2 }}
+              className="w-5  bg-[#F6CF42] relative rounded"
+            ></motion.div>
             <p className="text-[8px] text-[#e2e0e0]">2018</p>
           </div>
           <div className="flex items-center justify-center gap-1 flex-col">
-            <div className="w-5 h-8 bg-[#e2e0e0] rounded"></div>
+            <motion.div
+              variants={{
+                initial: {
+                  height: 0,
+                },
+                visible: {
+                  height: 32,
+                },
+              }}
+              initial="initial"
+              animate={isInView ? "visible" : "initial"}
+              transition={{ duration: 2 }}
+              className="w-5  bg-[#e2e0e0] rounded"
+            ></motion.div>
             <p className="text-[8px] text-[#e2e0e0]">2017</p>
           </div>
         </div>

@@ -101,7 +101,9 @@ export const Footer = () => {
             Licence agreement
           </FooterLink>
         </div>
-        <div className="w-[120px] h-[120px] bg-white rounded"></div>
+        <div className="w-[100px] flex items-center justify-center h-[100px] bg-white rounded-3xl">
+          <img src="/image/qr.png" alt="" />
+        </div>
       </motion.section>
     </footer>
   );

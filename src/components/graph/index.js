@@ -71,7 +71,7 @@ const StatAreaChart = () => {
           <Area
             type="monotone"
             dataKey="uv"
-            stroke="#F9B32E"
+            stroke="#F6CF42"
             strokeWidth={3}
             fillOpacity={3}
             fill="url(#colorUv)"
