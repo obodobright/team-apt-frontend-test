@@ -1,4 +1,28 @@
-This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
+### Assessment
+
+Given the design here:
+URL:https://dribbble.com/shots/23402072-Ramos-Website-design-for-digital-business-analytic-
+
+### Purpose
+
+The purpose of this test is to see how well the candidate can translate designs to actual working
+HTML/CSS/Javascript i.e. a working web application. Half of the time, client-facing engineers
+(web and mobile developers) will be translating designs to code. We want to be sure that
+candidates can accurately translate a design task given to a very high standard.
+
+#### Task
+
+URL:https://dribbble.com/shots/23402072-Ramos-Website-design-for-digital-business-analytic-
+platform
+● You are to come up with a desktop-only (non-responsive) translation of the dribble
+design.
+● All the pages/states shown in the video are to be implemented.
+● Make sure to imitate all the scroll behaviors, effects and animations as accurately as you
+can.
+
+## Frontend Stack
+
+Reactjs, Nextjs 14, framer-motion and tailwindcss
 
 ## Getting Started
 
@@ -16,25 +40,8 @@ bun dev
 
 Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-You can start editing the page by modifying `pages/index.js`. The page auto-updates as you edit the file.
-
-[API routes](https://nextjs.org/docs/api-routes/introduction) can be accessed on [http://localhost:3000/api/hello](http://localhost:3000/api/hello). This endpoint can be edited in `pages/api/hello.js`.
-
-The `pages/api` directory is mapped to `/api/*`. Files in this directory are treated as [API routes](https://nextjs.org/docs/api-routes/introduction) instead of React pages.
-
-This project uses [`next/font`](https://nextjs.org/docs/basic-features/font-optimization) to automatically optimize and load Inter, a custom Google Font.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js/) - your feedback and contributions are welcome!
-
 ## Deploy on Vercel
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+deployment link: https://team-apt-frontend-test-6fp2.vercel.app/
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
+
